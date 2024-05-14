@@ -1,0 +1,25 @@
+node_modules
+.env
+
+package-lock.json
+
+# Hardhat files
+/cache
+/artifacts
+/contracts/tokens
+/test
+/scripts/merkle
+/scripts/mainnet
+/libs/diamond.json
+/contracts/internal/libraries/LibMerkleProof.sol
+/contracts/external/CheckContract.sol
+
+# TypeChain files
+/types
+/typechain
+/typechain-types
+
+# solidity-coverage files
+/coverage
+/coverage.json
+
