@@ -35,9 +35,9 @@ const TXPad = {
   maxDepositValue: 1000e6,
   tokenPrice: 50000, // 0.050000 usdc
   xPadTotalScore: 0,
-  xPadRegisterStartDate: currentTime + 1000,
-  xPadRegisterEndDate: currentTime + 2000,
-  xPadDepositStartDate: currentTime + 3000,
+  xPadRegisterStartDate: currentTime + 100,
+  xPadRegisterEndDate: currentTime + 400,
+  xPadDepositStartDate: currentTime + 500,
   xPadDepositEndDate: currentTime + 4000,
   vestingContractAddress: zeroAddress,
   projectWalletAddress: "0xE181c949E10e7c5f47B6Ac2Fa461aA5Aa6f11823",

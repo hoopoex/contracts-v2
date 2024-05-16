@@ -44,6 +44,15 @@ contract Settings is Modifiers,OwnableInternal {
         LibStake.layout().stakePoolVeriables = _params;
     }
 
+    function setStakePoolStatus(
+        bool _status
+    )
+        external 
+        onlyOwner 
+    {
+        LibStake.layout().stakePoolVeriables.isActive = _status;
+    }
+
     function setBlacklist(
         bool _status,
         address _user
@@ -230,6 +239,18 @@ contract Settings is Modifiers,OwnableInternal {
         onlyOwner 
     {
         LibXPad.layout().xPadGlobalInfo.xPadIsActive = _status;
+    }
+
+    function setXPadVestingContractAddress(
+        uint256 _id,
+        address _address
+    )
+        external 
+        onlyOwner 
+        isValidContract(_address) 
+    {
+        if(!LibXPad.layout().xPadProject[_id].xPadIsExist)revert Invalid_Action();
+        LibXPad.layout().xPadProject[_id].vestingContractAddress = _address;
     }
 
 }

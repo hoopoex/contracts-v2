@@ -4,7 +4,7 @@ const { TXPad } = require("./utils/projects/gasp/details");
 async function main() {
   const [deployer] = await ethers.getSigners();
 
-  const DIAMOND_ADDRESS = "0xD221ebDA96e4270C88c76b913345408b85015B4E";
+  const DIAMOND_ADDRESS = "0x17f37c992CEe7257820D5B8158D5E914b54d7FAE";
   const createFacetContract = await ethers.getContractAt(
     "XPadCreate",
     DIAMOND_ADDRESS

@@ -1,0 +1,23 @@
+import { ethers } from "hardhat";
+const { TXPad } = require("./utils/projects/gasp/details");
+
+async function main() {
+  const [deployer] = await ethers.getSigners();
+  const PROJECT_ID = 1;
+
+  const DIAMOND_ADDRESS = "0x17f37c992CEe7257820D5B8158D5E914b54d7FAE";
+  const queryFacet = await ethers.getContractAt("Query", DIAMOND_ADDRESS);
+  await queryFacet.deployed();
+
+  const list = await queryFacet.getXPadUsers(PROJECT_ID);
+  console.log(list);
+}
+
+/*
+npx hardhat run scripts/testnet/fuji/getUserList.ts --network avalanche-fuji
+*/
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});

@@ -19,7 +19,7 @@ contract XPadCreate is OwnableInternal {
         onlyOwner 
     {
         LibXPad.Layout storage xs = LibXPad.layout();
-        // if(xs.xPadProject[_params.xPadProjectId].xPadIsExist){ revert Invalid_Action(); }
+        if(xs.xPadProject[_params.xPadProjectId].xPadIsExist)revert Invalid_Action();
 
         xs.xPadProject[_params.xPadProjectId] = _params;
         xs.xPadGlobalInfo.xPadProjectIds.push(_params.xPadProjectId);
