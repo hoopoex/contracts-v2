@@ -6,7 +6,6 @@ import { TXPadInfo } from "../libraries/Structs.sol";
 import { LibXPad } from "../libraries/LibXPad.sol";
 import "../../external/Reserve.sol";
 import "../libraries/Errors.sol";
-import "hardhat/console.sol";
 
 contract XPadCreate is OwnableInternal {
 

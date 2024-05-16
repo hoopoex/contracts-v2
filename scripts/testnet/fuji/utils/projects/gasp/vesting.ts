@@ -14,11 +14,11 @@ async function main() {
 
   const VESTING_PARAMS = {
     merkleRoot:
-      "0xd92df866e398241c640e3818e847f990b78108b0fcafe3ab683965ed23f48ef3",
+      "0x192f603e4d4b6621819cc27a32596da63b5b0ccc8cabc59bf85eb39a45c22feb",
     poolIndex: 0,
     totalUsers: 0,
-    totalTokensToBeDistributed: parseEther("20000"),
-    tokenAddress: "0xb411eC1ee06144F9bCcE2400a49dAFBfd79dAE19",
+    totalTokensToBeDistributed: parseEther("57440"),
+    tokenAddress: "0x7B139A56da96FFef1E5B2183e00EBa74590fe4e0",
   };
 
   const initVesting = await vesting

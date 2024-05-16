@@ -2,7 +2,7 @@
 pragma solidity 0.8.24;
 
 import { ISolidStateERC20 } from "@solidstate/contracts/token/ERC20/ISolidStateERC20.sol";
-import { TStakePoolVeriables,TMembership,TNFT } from "../libraries/Structs.sol";
+import { TStakePoolVeriables,TMembership,TNFT,TXPadInfo } from "../libraries/Structs.sol";
 import '@solidstate/contracts/access/ownable/OwnableInternal.sol';
 import { LibMembership } from "../libraries/LibMembership.sol";
 import { Modifiers } from "../libraries/Modifiers.sol";
@@ -251,6 +251,20 @@ contract Settings is Modifiers,OwnableInternal {
     {
         if(!LibXPad.layout().xPadProject[_id].xPadIsExist)revert Invalid_Action();
         LibXPad.layout().xPadProject[_id].vestingContractAddress = _address;
+    }
+
+    function setXPadProject(
+        TXPadInfo memory _params
+    ) 
+        external 
+        onlyOwner 
+    {
+        LibXPad.Layout storage xs = LibXPad.layout();
+        if(!xs.xPadProject[_params.xPadProjectId].xPadIsExist)revert Invalid_Action();
+        address reserveContract = xs.xPadProject[_params.xPadProjectId].projectReserveContract;
+
+        xs.xPadProject[_params.xPadProjectId] = _params;
+        xs.xPadProject[_params.xPadProjectId].projectReserveContract = reserveContract;
     }
 
 }

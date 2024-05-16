@@ -4,8 +4,8 @@ async function main() {
   const [deployer] = await ethers.getSigners();
 
   const PROJECT_ID = 1;
-  const VESTING_CONTRACT_ADDRESS = "0x405Ad9243aaCc79957f6F09Ab8E8eEB1A67e8745";
-  const DIAMOND_CONTRACT_ADDRESS = "0x6359c238dfA2F67B19BF05580FeF5f31eDd62f06";
+  const VESTING_CONTRACT_ADDRESS = "0x84Ef283E649d8b5E69dBC4c56cd188DaB1320eAf";
+  const DIAMOND_CONTRACT_ADDRESS = "0xD411F6647de6D12ae6476fF531d821d025D63500";
 
   const createFacetContract = await ethers.getContractAt(
     "Settings",

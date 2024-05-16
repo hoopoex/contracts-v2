@@ -19,8 +19,8 @@ async function main() {
   const ZERO_ADDR = zeroAddress;
   const R_NAME = "Hoopx Testnet Reserve Contract"; // Hoopx Reserve Contract Name
 
-  const STAKE_LIQUIDITY_AMOUNT_HOOP = parseEther("1000"); // 1000 hoop
-  const STAKE_LIQUIDITY_AMOUNT_USDC = 1000000000; // 1000 usdc
+  const STAKE_LIQUIDITY_AMOUNT_HOOP = parseEther("100000"); // 100000 hoop
+  const STAKE_LIQUIDITY_AMOUNT_USDC = 100000000000; // 100000 usdc
 
   const [deployer] = await ethers.getSigners();
 
@@ -45,7 +45,7 @@ async function main() {
   const usdcContract = await usdcFactory.deploy();
   await usdcContract.deployed();
 
-  const hoopFactory = await ethers.getContractFactory("Hoopoe");
+  const hoopFactory = await ethers.getContractFactory("HoopoeTest");
   const hoopContract = await hoopFactory.deploy();
   await hoopContract.deployed();
 

@@ -4,15 +4,15 @@ import { parseEther } from "viem";
 async function main() {
   const [deployer] = await ethers.getSigners();
 
-  const VESTING_ADDRESS = "0x405Ad9243aaCc79957f6F09Ab8E8eEB1A67e8745";
-  const TOKEN_ADDRESS = "0xb411eC1ee06144F9bCcE2400a49dAFBfd79dAE19";
-  const LIQUIDITY_AMOUNT = parseEther("500");
+  const VESTING_ADDRESS = "0x84Ef283E649d8b5E69dBC4c56cd188DaB1320eAf";
+  const TOKEN_ADDRESS = "0x7B139A56da96FFef1E5B2183e00EBa74590fe4e0";
+  const LIQUIDITY_AMOUNT = parseEther("10000");
 
   const Vesting = await ethers.getContractFactory("XPadVesting");
   const vesting = await Vesting.attach(VESTING_ADDRESS);
   await vesting.deployed();
 
-  const token = await ethers.getContractAt("Hoopoe", TOKEN_ADDRESS);
+  const token = await ethers.getContractAt("HoopoeTest", TOKEN_ADDRESS);
   await token.deployed();
 
   const approveTx = await token
